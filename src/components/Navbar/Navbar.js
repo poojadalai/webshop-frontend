@@ -55,7 +55,11 @@ export default function Navbar(props) {
         </ul>
       </nav>
       <form>
-        <input className="add" type="search" placeholder="search here..."></input>
+        <input
+          className="add"
+          type="search"
+          placeholder="search here..."
+        ></input>
       </form>
       <div className="shop-links">
         <NavLink to="/" className="icons">
