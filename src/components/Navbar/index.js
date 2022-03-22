@@ -9,7 +9,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Navbar(props) {
+function Navbar(props) {
   return (
     <div className="menu">
       <nav className="nav">
@@ -75,3 +75,6 @@ export default function Navbar(props) {
     </div>
   );
 }
+
+
+export { Navbar };

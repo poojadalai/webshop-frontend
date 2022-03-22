@@ -49,8 +49,12 @@
   font-size: 20px;
   color: white;
 }
-.icons:hover{
+.icons:hover {
   color: #000;
 }
 
-input { outline: none; }
+input {
+  outline: none;
+  height: 12px;
+  padding: 10px;
+}
