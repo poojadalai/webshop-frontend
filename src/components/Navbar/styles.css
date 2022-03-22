@@ -58,3 +58,13 @@ input {
   height: 12px;
   padding: 10px;
 }
+
+.container{
+  width: 600px;
+  margin: auto;
+  padding: auto;
+  display: flex;
+
+}
+
+
