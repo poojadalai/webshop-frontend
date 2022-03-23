@@ -1,0 +1,40 @@
+.footer-main {
+  width: 100%;
+  background-color: #0d0e43;
+  color: white;
+}
+.p-2 {
+  margin-right: 250px;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  user-select: none;
+  display: flex;
+  flex: 1;
+  padding-top: 50px;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+.items {
+  list-style: none;
+  color: #8a8fb9;
+  text-align: left;
+}
+.items li {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.footer-head {
+  font-size: 26px;
+  margin: 0;
+}
+
+.fa1 {
+  color: white;
+  margin-right: 14px;
+}
