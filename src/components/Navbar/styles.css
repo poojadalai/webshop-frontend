@@ -2,7 +2,7 @@
   background-color: #8568ff;
   display: flex;
   flex: 1;
-  height: 60px;
+  height: 80px;
   align-items: center;
   justify-content: space-around;
 }
@@ -10,7 +10,7 @@
 .nav-ul {
   list-style-type: none;
   margin: 0;
-  column-gap: 26px;
+  column-gap: 35px;
   display: flex;
   justify-content: left;
   padding: 10px;
@@ -33,7 +33,7 @@
 }
 
 .logo {
-  font-size: 26px;
+  font-size: 32px;
 }
 .shop {
   color: white;
@@ -56,15 +56,6 @@
 input {
   outline: none;
   height: 12px;
-  padding: 10px;
+  font-size: 16px;
+  padding: 15px;
 }
-
-.container{
-  width: 600px;
-  margin: auto;
-  padding: auto;
-  display: flex;
-
-}
-
-
