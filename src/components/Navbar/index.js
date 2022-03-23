@@ -32,7 +32,7 @@ function Navbar(props) {
           </li>
           <li className="nav-li">
             <NavLink
-              to="/shop"
+              to="/"
               className="nav-li"
               style={({ isActive }) =>
                 isActive ? { color: "white" } : undefined
@@ -43,7 +43,7 @@ function Navbar(props) {
           </li>
           <li className="nav-li">
             <NavLink
-              to="/details"
+              to="/shop"
               className="nav-li"
               style={({ isActive }) =>
                 isActive ? { color: "white" } : undefined
