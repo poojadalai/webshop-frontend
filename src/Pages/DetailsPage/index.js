@@ -12,6 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import "./styles.css";
 import { NavLink } from "react-router-dom";
+
 import { Description, Banner } from "../../components";
 
 function Details() {
@@ -21,9 +22,11 @@ function Details() {
   const params = useParams();
 
   const fetchCharacter = async () => {
+
     const response = await axios.get(
       `http://localhost:4000/products/${params.id}`
     );
+
     console.log("res", response.data);
     setProduct(response.data);
   };
@@ -36,6 +39,7 @@ function Details() {
 
   return (
     <div>
+
       <Banner />
       <p className="navigation">
         <NavLink className="navlink" to="/">
