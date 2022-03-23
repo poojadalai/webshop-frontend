@@ -7,6 +7,11 @@
   align-items: center;
   column-gap: 100px;
 }
+
+.col-1 >h4{
+  font-weight:500;
+  font-size: 20px;
+}
 .des-container {
   flex-direction: column;
   max-width: 1280px;

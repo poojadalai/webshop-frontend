@@ -32,7 +32,7 @@ function Navbar(props) {
           </li>
           <li className="nav-li">
             <NavLink
-              to="/"
+              to="/details"
               className="nav-li"
               style={({ isActive }) =>
                 isActive ? { color: "white" } : undefined
@@ -54,7 +54,7 @@ function Navbar(props) {
           </li>
         </ul>
       </nav>
-      <form>
+      <form className="search">
         <input
           className="add"
           type="search"
@@ -75,6 +75,5 @@ function Navbar(props) {
     </div>
   );
 }
-
 
 export { Navbar };

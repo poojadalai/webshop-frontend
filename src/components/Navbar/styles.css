@@ -53,9 +53,11 @@
   color: #000;
 }
 
-input {
+.search > input {
   outline: none;
   height: 12px;
   font-size: 16px;
-  padding: 15px;
+  padding: 20px;
+  border: solid 1px #ccc;
+  border-radius: 6px;
 }
