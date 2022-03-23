@@ -12,20 +12,26 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import "./styles.css";
 import { NavLink } from "react-router-dom";
-import { Description } from "../../components";
-import { Banner } from "../../components";
 
-function Details(props) {
+import { Description, Banner } from "../../components";
+
+function Details() {
   const [product, setProduct] = useState({});
 
   //getting the id from the params
   const params = useParams();
 
   const fetchCharacter = async () => {
-    const response = await axios.get(`http://localhost:4000/products/2`);
+
+    const response = await axios.get(
+      `http://localhost:4000/products/${params.id}`
+    );
+
     console.log("res", response.data);
     setProduct(response.data);
   };
+
+  console.log(params.id);
 
   useEffect(() => {
     fetchCharacter();
@@ -33,26 +39,34 @@ function Details(props) {
 
   return (
     <div>
-      <div>
-        <Banner />
-      </div>
+
+      <Banner />
       <p className="navigation">
-        Home. Shop.<span className="title"> {product.title}</span>
+        <NavLink className="navlink" to="/">
+          Home.
+        </NavLink>
+        <NavLink className="navlink" to="/shop">
+          Shop.
+        </NavLink>
+        <span className="title"> {product.title}</span>
       </p>
-      <div className="container">
+      <div className="details-container">
         <div className="product-img">
           <img alt="product" src={product.mainImage} />
         </div>
         <div className="product-content">
           <h2>{product.title}</h2>{" "}
           <div className="col">
-            <ReactStars
-              count={5}
-              size={20}
-              value={product.rating}
-              activeColor="#ffd700"
-            />
-            <span className="span">(22)</span>
+            {product.rating >= 0 && (
+              <ReactStars
+                count={5}
+                size={20}
+                value={product.rating}
+                half
+                activeColor="#ffd700"
+              />
+            )}
+            <span className="span">({product.rating})</span>
             <button className="btn" onClick={() => console.log("Add reviews!")}>
               Add Review
             </button>

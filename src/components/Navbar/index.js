@@ -54,7 +54,7 @@ function Navbar(props) {
           </li>
         </ul>
       </nav>
-      <form>
+      <form className="search">
         <input
           className="add"
           type="search"
@@ -75,6 +75,5 @@ function Navbar(props) {
     </div>
   );
 }
-
 
 export { Navbar };

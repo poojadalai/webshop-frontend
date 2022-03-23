@@ -4,12 +4,18 @@ import "./styles.css";
 import { useState } from "react";
 import axios from "axios";
 import { ProductCard } from "../../components";
+import { faLessThanEqual } from "@fortawesome/free-solid-svg-icons";
 
 const API_URL = "http://localhost:4000/products";
 
 function Shop() {
   const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState("");
+  const [categories, setCategories] = useState({
+    Electronics: false,
+    "Women's Clothing": false,
+    Jewelery: false,
+    "Men's Clothing": false,
+  });
 
   const fetchData = async () => {
     try {
@@ -24,16 +30,47 @@ function Shop() {
     fetchData();
   }, []);
 
-  const filteredOnCategory = !category
+  const isFilterEmpty = () => {
+    // map over each property
+    // if prop === true => false
+    // return true
+    if (Object.values(categories).every((element) => element === false)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const filteredOnCategory = isFilterEmpty()
     ? [...products]
     : [...products].filter((product) => {
-        return product.category.title === category;
+        // return product.category.title === category;
+        return categories[product.category.title];
       });
 
   console.log(filteredOnCategory);
 
-  console.log(products);
-  console.log(category);
+  const handleCheck = (e) => {
+    const { value } = e.target;
+    console.log(value);
+    if (e.target.checked) {
+      const newCaterogries = {
+        ...categories,
+        [value]: true,
+      };
+      setCategories(newCaterogries);
+    } else {
+      const newCaterogries = {
+        ...categories,
+        [value]: false,
+      };
+      setCategories(newCaterogries);
+    }
+  };
+
+  useEffect(() => {
+    console.log("cat", categories);
+  }, [categories]);
   return (
     <div>
       <Banner />
@@ -46,9 +83,7 @@ function Shop() {
                 type="checkbox"
                 value="Electronics"
                 onChange={(e) => {
-                  if (e.target.checked) {
-                    setCategory(e.target.value);
-                  }
+                  handleCheck(e);
                 }}
               />
               <label>Electronics</label>
@@ -58,9 +93,7 @@ function Shop() {
                 type="checkbox"
                 value="Jewelery"
                 onChange={(e) => {
-                  if (e.target.checked) {
-                    setCategory(e.target.value);
-                  }
+                  handleCheck(e);
                 }}
               />
               <label>Jewelery</label>
@@ -70,9 +103,7 @@ function Shop() {
                 type="checkbox"
                 value="Men's Clothing"
                 onChange={(e) => {
-                  if (e.target.checked) {
-                    setCategory(e.target.value);
-                  }
+                  handleCheck(e);
                 }}
               />
               <label>Men's Clothing</label>
@@ -82,9 +113,7 @@ function Shop() {
                 type="checkbox"
                 value="Women's Clothing"
                 onChange={(e) => {
-                  if (e.target.checked) {
-                    setCategory(e.target.value);
-                  }
+                  handleCheck(e);
                 }}
               />
               <label>Women's Clothing</label>
@@ -95,10 +124,11 @@ function Shop() {
           {!filteredOnCategory
             ? "Products not found"
             : filteredOnCategory.map((product, index) => {
-                const { mainImage, title, price, description } = product;
+                const { id, mainImage, title, price, description } = product;
                 return (
                   <div key={index}>
                     <ProductCard
+                      id={id}
                       image={mainImage}
                       name={title}
                       price={price}
