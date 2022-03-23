@@ -95,10 +95,11 @@ function Shop() {
           {!filteredOnCategory
             ? "Products not found"
             : filteredOnCategory.map((product, index) => {
-                const { mainImage, title, price, description } = product;
+                const { id, mainImage, title, price, description } = product;
                 return (
                   <div key={index}>
                     <ProductCard
+                      id={id}
                       image={mainImage}
                       name={title}
                       price={price}

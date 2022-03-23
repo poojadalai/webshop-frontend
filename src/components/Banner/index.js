@@ -4,7 +4,7 @@ import Fan from "../../images/Fan.png";
 
 function Banner() {
   return (
-    <div className="container">
+    <div className="banner-container">
       <div className="text">
         <p>
           Products for every need,at the <br /> distance of a click
