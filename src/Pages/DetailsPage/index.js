@@ -13,6 +13,7 @@ import {
 import "./styles.css";
 import { NavLink } from "react-router-dom";
 import { Description } from "../../components";
+import { Banner } from "../../components";
 
 function Details(props) {
   const [product, setProduct] = useState({});
@@ -21,7 +22,7 @@ function Details(props) {
   const params = useParams();
 
   const fetchCharacter = async () => {
-    const response = await axios.get(`http://localhost:4000/products/${params.productId}`);
+    const response = await axios.get(`http://localhost:4000/products/2`);
     console.log("res", response.data);
     setProduct(response.data);
   };
@@ -32,6 +33,9 @@ function Details(props) {
 
   return (
     <div>
+      <div>
+        <Banner />
+      </div>
       <p className="navigation">
         Home. Shop.<span className="title"> {product.title}</span>
       </p>
