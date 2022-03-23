@@ -1,0 +1,37 @@
+.container {
+  background-color: #8568ff;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 40px;
+}
+
+.text {
+  font-size: 25px;
+  color: white;
+  align-items: center;
+}
+
+.imageClass{
+    position: relative;
+
+}
+.image {
+  height: 400px;
+  width:500px;
+  
+  /* position: absolute; */
+}
+
+
+.imageClass{
+    margin-bottom: 0;
+}
+.row{
+    width: 600px;
+    margin: auto;
+    display: flex;
+    column-gap: 150px;;
+}
