@@ -1,29 +1,57 @@
 import React from "react";
 import "./styles.css";
-import { Link } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink } from "react-router-dom";
+import { faCartShopping, faHeart, faSearchPlus } from "@fortawesome/free-solid-svg-icons";
+
 
 function ProductCard(props) {
-  const { id, image, name, price, description } = props;
+  const { id, image, name, rating, price, description } = props;
 
   return (
-    <div>
-      <Link to={`/products/${id}`}>
-        <div className="single-card-container">
-          <div>
-            <img className="product-image" src={image} alt="Product" />
-          </div>
-          <div>
-            <p className="product-name">{name}</p>
-            <div>
-              <p>
-                ${price} <span>Rating stars</span>
-              </p>
-            </div>
-            <p>{description}</p>
-          </div>
+    <NavLink className="navlink-pro" to={`/products/${id}`}>
+      <div className="single-card-container">
+        <div className="single-image">
+          <img src={image} alt="Product" />
         </div>
-      </Link>
-    </div>
+        <div className="single-content">
+          <h3 className="product-name">{name}</h3>
+          <div className="price-rate">
+            <span className="span">€{price}</span>
+              <ReactStars
+                count={5}
+                size={20}
+                value={rating}
+                half
+                activeColor="#ffd700"
+              />
+          </div>
+          <p>{description}</p>
+
+          <div>
+              <NavLink to="/share">
+                <FontAwesomeIcon
+                  className="fa-s"
+                  icon={faCartShopping}
+                ></FontAwesomeIcon>
+              </NavLink>
+              <NavLink to="/share">
+                <FontAwesomeIcon
+                  className="fa-s"
+                  icon={faHeart}
+                ></FontAwesomeIcon>
+              </NavLink>
+              <NavLink to="/share">
+                <FontAwesomeIcon
+                  className="fa-s"
+                  icon={faSearchPlus}
+                ></FontAwesomeIcon>
+              </NavLink>
+            </div>
+        </div>
+      </div>
+    </NavLink>
   );
 }
 

@@ -4,7 +4,6 @@ import "./styles.css";
 import { useState } from "react";
 import axios from "axios";
 import { ProductCard } from "../../components";
-import { faLessThanEqual } from "@fortawesome/free-solid-svg-icons";
 
 const API_URL = "http://localhost:4000/products";
 
@@ -31,9 +30,6 @@ function Shop() {
   }, []);
 
   const isFilterEmpty = () => {
-    // map over each property
-    // if prop === true => false
-    // return true
     if (Object.values(categories).every((element) => element === false)) {
       return true;
     } else {
@@ -44,12 +40,12 @@ function Shop() {
   const filteredOnCategory = isFilterEmpty()
     ? [...products]
     : [...products].filter((product) => {
-        // return product.category.title === category;
         return categories[product.category.title];
       });
 
   console.log(filteredOnCategory);
 
+  //handling checkbox
   const handleCheck = (e) => {
     const { value } = e.target;
     console.log(value);
@@ -68,9 +64,6 @@ function Shop() {
     }
   };
 
-  useEffect(() => {
-    console.log("cat", categories);
-  }, [categories]);
   return (
     <div>
       <Banner />
@@ -121,27 +114,29 @@ function Shop() {
           </div>
         </div>
         <div>
-          {!filteredOnCategory
-            ? "Products not found"
-            : filteredOnCategory.map((product, index) => {
-                const { id, mainImage, title, price, description } = product;
-                return (
-                  <div key={index}>
-                    <ProductCard
-                      id={id}
-                      image={mainImage}
-                      name={title}
-                      price={price}
-                      description={description}
-                    />
-                  </div>
-                );
-              })}
+          <div className="products-container">
+            {!filteredOnCategory
+              ? "Products not found"
+              : filteredOnCategory.map((product, index) => {
+                  const { id, mainImage, title, price, description } = product;
+                  return (
+                    <div key={index}>
+                      <ProductCard
+                        id={id}
+                        image={mainImage}
+                        name={title}
+                        price={price}
+                        description={description}
+                      />
+                    </div>
+                  );
+                })}
+          </div>
+          <div className="pagination-container">
+            <button>Previous</button>
+            <button>Next</button>
+          </div>
         </div>
-      </div>
-      <div className="pagination-container">
-        <button>Previous</button>
-        <button>Next</button>
       </div>
     </div>
   );
