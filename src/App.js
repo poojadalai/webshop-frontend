@@ -2,6 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Footer, Navbar } from "./components";
 import { Details, Home, Shop, Signup } from "./Pages";
+import { Login } from "./Pages/Login";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/products/:id" element={<Details />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </div>

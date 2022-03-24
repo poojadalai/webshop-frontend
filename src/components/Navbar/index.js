@@ -62,7 +62,7 @@ function Navbar(props) {
         ></input>
       </form>
       <div className="shop-links">
-        <NavLink to="/" className="icons">
+        <NavLink to="/signup" className="icons">
           <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
         </NavLink>
         <NavLink to="/" className="icons">
