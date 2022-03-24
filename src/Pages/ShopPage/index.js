@@ -75,6 +75,7 @@ function Shop() {
               <input
                 type="checkbox"
                 value="Electronics"
+                checked={categories["Electronics"]}
                 onChange={(e) => {
                   handleCheck(e);
                 }}
