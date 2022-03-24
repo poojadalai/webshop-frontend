@@ -18,8 +18,9 @@
 
 
 .category-bar {
-  width: fit-content;
+  width: 200px;
   text-align: left;
+  margin: 0 50px;
 }
 .pagination-container {
   display: flex;

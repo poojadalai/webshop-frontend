@@ -69,8 +69,8 @@ function Shop() {
       <Banner />
       <div className="shop-page-container">
         <div className="category-bar">
-          <h3>Categories</h3>
-          <div>
+          <h3 className="f20">Categories</h3>
+          <div className="cat-input f18">
             <div>
               <input
                 type="checkbox"
@@ -118,7 +118,8 @@ function Shop() {
             {!filteredOnCategory
               ? "Products not found"
               : filteredOnCategory.map((product, index) => {
-                  const { id, mainImage, title, price, description } = product;
+                  const { id, mainImage, rating, title, price, description } =
+                    product;
                   return (
                     <div key={index}>
                       <ProductCard
@@ -126,6 +127,7 @@ function Shop() {
                         image={mainImage}
                         name={title}
                         price={price}
+                        rating={rating}
                         description={description}
                       />
                     </div>
