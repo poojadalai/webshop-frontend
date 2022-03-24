@@ -2,11 +2,11 @@
     background: linear-gradient(#e66465, #9198e5)!important;
 } */
 
-.text-align{
-    text-align: center;
+.text-align {
+  text-align: center;
 }
-.color{
-    color: grey;
+.color {
+  color: grey;
 }
 
 .reg-container {
@@ -69,17 +69,18 @@
   border: 1px solid #c2c5e1;
   box-sizing: border-box;
   border-radius: 8px;
+  padding: 20px;
 }
 
 .btn-rg {
   border: 1px solid rgb(255, 255, 255);
   color: white;
-  padding:12px;
+  padding: 12px;
   border-radius: 8px;
   text-align: center;
   width: 325px;
   text-decoration: none;
-  background: #FB2E86;
+  background: #fb2e86;
   display: inline-block;
   font-size: 16px;
   margin: 8px 5px;
