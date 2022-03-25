@@ -16,6 +16,7 @@ function Shop() {
     Jewelery: false,
     "Men's Clothing": false,
   });
+  
 
   const fetchData = async () => {
     try {

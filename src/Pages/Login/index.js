@@ -21,6 +21,11 @@ function Login() {
       setMessage("Login Successful!!!");
       setEmail("");
       setPassword("");
+
+      setTimeout(function () {        
+        window.location.href= "/shop"
+      }, 500);
+
     } catch (error) {
       if (error.response) {
         console.log(error.response.data);
