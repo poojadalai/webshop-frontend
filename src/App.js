@@ -1,12 +1,11 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Footer, Navbar } from "./components";
-import { Details, Home, Shop, Signup } from "./Pages";
+import { Details, Home, Shop, Signup, Cart } from "./Pages";
 import { Login } from "./Pages/Login";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-
   // const [token, setToken] = useState("")
   // const [user, setUser] = useState()
 
@@ -16,17 +15,24 @@ function App() {
   //   }
   // }, [token])
 
+  const [cart, setCart] = useState([]);
+
+  // console.log(cart);
 
   return (
     <div className="App">
-       {/* <Navbar user={user}/> */}
+      {/* <Navbar user={user}/> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/products/:id" element={<Details />} />
+        <Route path="/shop" element={<Shop setCart={setCart} cart={cart} />} />
+        <Route
+          path="/products/:id"
+          element={<Details setCart={setCart} cart={cart} />}
+        />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/cart" element={<Cart cart={cart} />} />
       </Routes>
       <Footer />
     </div>

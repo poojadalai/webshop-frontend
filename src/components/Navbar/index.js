@@ -65,7 +65,7 @@ function Navbar(props) {
         <NavLink to="/signup" className="icons">
           <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
         </NavLink>
-        <NavLink to="/" className="icons">
+        <NavLink to="/cart" className="icons">
           <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
         </NavLink>
         <NavLink to="/" className="icons">

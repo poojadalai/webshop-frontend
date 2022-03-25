@@ -8,7 +8,7 @@ import ReactStars from "react-rating-stars-component";
 
 const API_URL = "http://localhost:4000/products";
 
-function Shop() {
+function Shop({ setCart,cart }) {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState({
     Electronics: false,
@@ -28,6 +28,7 @@ function Shop() {
 
   useEffect(() => {
     fetchData();
+    // setCart({ name: "Some object" });
   }, []);
 
   const isFilterEmpty = () => {
@@ -44,7 +45,7 @@ function Shop() {
         return categories[product.category.title];
       });
 
-  console.log(filteredOnCategory);
+  // console.log(filteredOnCategory);
 
   //handling checkbox
   const handleCheck = (e) => {
@@ -64,7 +65,9 @@ function Shop() {
       setCategories(newCaterogries);
     }
   };
+
   
+
   return (
     <div>
       <Banner />
@@ -120,7 +123,6 @@ function Shop() {
               <input
                 type="checkbox"
                 value="3.2"
-                
                 onChange={(e) => {
                   console.log(e);
                 }}
@@ -190,17 +192,15 @@ function Shop() {
             {!filteredOnCategory
               ? "Products not found"
               : filteredOnCategory.map((product, index) => {
-                  const { id, mainImage, rating, title, price, description } =
-                    product;
+                  // const { id, mainImage, rating, title, price, description } 
+                    // product;
                   return (
                     <div key={index}>
                       <ProductCard
-                        id={id}
-                        image={mainImage}
-                        name={title}
-                        price={price}
-                        rating={rating}
-                        description={description}
+                        // 
+                        product={product}
+                        setCart={setCart}
+                        cart={cart}
                       />
                     </div>
                   );

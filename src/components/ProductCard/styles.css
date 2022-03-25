@@ -70,6 +70,7 @@ input[type="checkbox"]:checked{
 .fa-s {
   margin-right: 20px;
   color: #8568ff;
+  cursor: pointer;
 }
 .navlink-pro {
   text-decoration: none;
