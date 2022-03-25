@@ -1,0 +1,29 @@
+.cart {
+  width: 100%;
+  background: linear-gradient(#c3c6e7, rgb(255 255 255));
+}
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  font-size: 26px;
+  font-weight: 100;
+}
+tr {
+  font-size: 24px;
+}
+th,
+td,
+tr {
+    text-align: left;
+  padding: 10px 10px 10px 0px;
+}
+
+.cart-btn{
+    background-color: #c3c6e7;
+    border: #c3c6e7;
+    padding: 8px;
+}
+.val{
+    padding: 10px;
+}
