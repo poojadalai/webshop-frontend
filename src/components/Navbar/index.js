@@ -21,7 +21,7 @@ function Navbar(props) {
           </li>
           <li className="nav-li">
             <NavLink
-              to="/"
+              to="/shop"
               className="nav-li"
               style={({ isActive }) =>
                 isActive ? { color: "white" } : undefined
