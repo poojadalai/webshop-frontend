@@ -4,6 +4,7 @@ import "./styles.css";
 import { useState } from "react";
 import axios from "axios";
 import { ProductCard } from "../../components";
+import ReactStars from "react-rating-stars-component";
 
 const API_URL = "http://localhost:4000/products";
 
@@ -63,7 +64,7 @@ function Shop() {
       setCategories(newCaterogries);
     }
   };
-
+  
   return (
     <div>
       <Banner />
@@ -113,6 +114,76 @@ function Shop() {
               <label>Women's Clothing</label>
             </div>
           </div>
+          <div className="rating-container">
+            <h3 className="f20">Ratings</h3>
+            <div className="d-flex center">
+              <input
+                type="checkbox"
+                value="3.2"
+                
+                onChange={(e) => {
+                  console.log(e);
+                }}
+              ></input>
+              <ReactStars
+                count={5}
+                size={20}
+                value={4}
+                half
+                activeColor="#ffd700"
+              />
+            </div>
+            <div className="d-flex center">
+              <input type="checkbox"></input>
+              <ReactStars
+                count={5}
+                size={20}
+                value={3}
+                half
+                activeColor="#ffd700"
+              />
+            </div>
+            <div className="d-flex center">
+              <input type="checkbox"></input>
+              <ReactStars
+                count={5}
+                size={20}
+                value={2}
+                half
+                activeColor="#ffd700"
+              />
+            </div>
+            <div className="d-flex center">
+              <input type="checkbox"></input>
+              <ReactStars
+                count={5}
+                size={20}
+                value={1}
+                half
+                activeColor="#ffd700"
+              />
+            </div>
+          </div>
+          <div className="price-container">
+            <h3 className="f20">Price filter</h3>
+
+            <div className="d-flex center">
+              <input type="checkbox"></input>
+              <span>€0.00 - €150.00</span>
+            </div>
+            <div className="d-flex center">
+              <input type="checkbox"></input>
+              <span>€150.00 - €350.00</span>
+            </div>
+            <div className="d-flex center">
+              <input type="checkbox"></input>
+              <span>€150.00 - €504.00</span>
+            </div>
+            <div className="d-flex center">
+              <input type="checkbox"></input>
+              <span>€450+</span>
+            </div>
+          </div>
         </div>
         <div>
           <div className="products-container">
@@ -136,8 +207,8 @@ function Shop() {
                 })}
           </div>
           <div className="pagination-container">
-            <button>Previous</button>
-            <button>Next</button>
+            <button className="btn">Previous</button>
+            <button className="btn">Next</button>
           </div>
         </div>
       </div>

@@ -24,8 +24,13 @@ function Signup() {
         email,
         password,
       });
-      console.log(newUser.data);
+      console.log(newUser.data);      
       setMessage(`Registered Successfully!!`);
+
+      setTimeout(function () {        
+        window.location.href= "/login"
+      }, 500);
+
       setName("");
       setEmail("");
       setPassword("");

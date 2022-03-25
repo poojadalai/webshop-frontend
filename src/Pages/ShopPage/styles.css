@@ -16,7 +16,6 @@
   margin: 0;
 } */
 
-
 .category-bar {
   width: 200px;
   text-align: left;
@@ -28,4 +27,21 @@
   margin: auto;
   max-width: 1200px;
   column-gap: 50px;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+}
+.center {
+  align-items: center;
+}
+.rating-container {
+  margin-top: 80px;
+}
+
+.rating-container input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  background-color: antiquewhite;
 }

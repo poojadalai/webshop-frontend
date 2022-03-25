@@ -18,7 +18,9 @@ function Login() {
         email,
       });
       console.log(newUser.data);
-      setMessage("Login Successful!!!!!!!");
+      setMessage("Login Successful!!!");
+      setEmail("");
+      setPassword("");
     } catch (error) {
       if (error.response) {
         console.log(error.response.data);
