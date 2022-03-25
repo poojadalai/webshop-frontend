@@ -12,7 +12,7 @@ import {
 function ProductCard({ product, setCart, cart }) {
   // const { id, mainImage, name, rating, price, description ,cart,setCart} = props;
 
-  const { id, mainImage, name, rating, price, description } = product;
+  const { id, mainImage, title, rating, price, description } = product;
 
   const addToCart = (e) => {
     // e.preventDefault()
@@ -28,7 +28,7 @@ function ProductCard({ product, setCart, cart }) {
         </div>
       </NavLink>
       <div className="single-content">
-        <h3 className="product-name f28">{name}</h3>
+        <h3 className="product-name f28">{title}</h3>
         <div className="price-rate f24">
           <span className="span">€{price}</span>
 
