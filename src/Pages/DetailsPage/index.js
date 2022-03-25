@@ -15,31 +15,37 @@ import { NavLink } from "react-router-dom";
 
 import { Description, Banner } from "../../components";
 
-function Details() {
+function Details({ setCart, cart }) {
   const [product, setProduct] = useState({});
 
   //getting the id from the params
   const params = useParams();
 
   const fetchCharacter = async () => {
-
     const response = await axios.get(
       `http://localhost:4000/products/${params.id}`
     );
 
-    console.log("res", response.data);
+    // console.log("res", response.data);
     setProduct(response.data);
   };
 
-  console.log(params.id);
+  // console.log(params.id);
 
   useEffect(() => {
     fetchCharacter();
+    // setCart({ value: 546 });
   }, []);
+
+  const addToCart = (e) => {
+    // e.preventDefault()
+    console.log(`adding to cart`);
+
+    setCart([...cart, product]);
+  };
 
   return (
     <div>
-
       <Banner />
       <p className="navigation">
         <NavLink className="navlink" to="/">
@@ -74,7 +80,7 @@ function Details() {
           <span className="span">€{product.price}</span>
           <p>{product.description}</p>
           <div>
-            <button className="btn" onClick={() => console.log("Add to cart!")}>
+            <button className="btn" onClick={addToCart}>
               <FontAwesomeIcon
                 className="fa"
                 icon={faCartShopping}
