@@ -10,14 +10,24 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function ProductCard({ product, setCart, cart }) {
-  // const { id, mainImage, name, rating, price, description ,cart,setCart} = props;
+  //const { id, mainImage, name, rating, price, description ,cart,setCart} = props;
 
   const { id, mainImage, title, rating, price, description } = product;
 
-  const addToCart = (e) => {
+  const addToCart = () => {
     // e.preventDefault()
     console.log(`adding to cart`);
-    setCart([...cart, product]);
+
+    const newCart = cart.map((item) => {
+      if (item.id === id) {
+        return { ...product, quantity: item.quantity + 1 };
+      } else {
+        return { ...product, quantity: 1 };
+      }
+    });
+    console.log(newCart)
+    // setCart(newCart);
+    setCart([...newCart]);
   };
 
   return (
